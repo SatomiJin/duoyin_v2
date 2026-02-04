@@ -1,0 +1,311 @@
+:root {
+    /* ========== PRIMARY COLORS ========== */
+    --primary-color: #0b4875;
+    /* Màu chủ đạo */
+    --primary-light: #1a6a9e;
+    /* Nhạt hơn - hover states */
+    --primary-lighter: #3d8fc4;
+    /* Nhạt hơn nữa - backgrounds */
+    --primary-dark: #083756;
+    /* Đậm hơn - active states */
+    --primary-darker: #052538;
+    /* Rất đậm - shadows */
+
+    /* ========== SECONDARY / ACCENT COLORS ========== */
+    --accent-color: #ff6b35;
+    /* Cam - CTA buttons, highlights */
+    --accent-light: #ff8c5a;
+    /* Cam nhạt */
+    --accent-dark: #e54e1b;
+    /* Cam đậm */
+
+    --secondary-color: #00b4d8;
+    /* Xanh cyan - links, icons */
+    --secondary-light: #48cae4;
+    /* Cyan nhạt */
+    --secondary-dark: #0096c7;
+    /* Cyan đậm */
+
+    /* ========== COMPLEMENTARY COLORS ========== */
+    --gold-color: #ffc947;
+    /* Vàng gold - badges, stars */
+    --teal-color: #2ec4b6;
+    /* Xanh ngọc - success alt */
+    --coral-color: #ff7f6e;
+    /* San hô - warm accent */
+
+    /* ========== BACKGROUND COLORS ========== */
+    --bg-primary: #0b4875;
+    /* Background chính (dark mode) */
+    --bg-secondary: #0d5a8f;
+    /* Background phụ */
+    --bg-tertiary: #1a6a9e;
+    /* Background thứ 3 */
+    --bg-light: #f0f7fc;
+    /* Background sáng (light mode) */
+    --bg-lighter: #f8fafc;
+    /* Background rất sáng */
+    --bg-white: #ffffff;
+    /* Trắng */
+    --bg-dark: #052538;
+    /* Background tối */
+    --bg-overlay: rgba(11, 72, 117, 0.9);
+    /* Overlay */
+
+    /* ========== TEXT COLORS ========== */
+    --text-primary: #ffffff;
+    /* Text chính trên nền tối */
+    --text-secondary: rgba(255, 255, 255, 0.85);
+    --text-tertiary: rgba(255, 255, 255, 0.65);
+    --text-muted: rgba(255, 255, 255, 0.45);
+
+    --text-dark: #1a1a2e;
+    /* Text trên nền sáng */
+    --text-dark-secondary: #4a4a68;
+    --text-dark-muted: #8888a0;
+
+    /* ========== BORDER COLORS ========== */
+    --border-color: rgba(255, 255, 255, 0.15);
+    --border-light: rgba(255, 255, 255, 0.25);
+    --border-dark: rgba(0, 0, 0, 0.1);
+
+    /* ========== STATUS COLORS ========== */
+    --success-color: #22c55e;
+    /* Xanh lá - success */
+    --success-light: #4ade80;
+    --success-bg: rgba(34, 197, 94, 0.15);
+
+    --warning-color: #f59e0b;
+    /* Vàng cam - warning */
+    --warning-light: #fbbf24;
+    --warning-bg: rgba(245, 158, 11, 0.15);
+
+    --error-color: #ef4444;
+    /* Đỏ - error */
+    --error-light: #f87171;
+    --error-bg: rgba(239, 68, 68, 0.15);
+
+    --info-color: #00b4d8;
+    /* Xanh dương - info */
+    --info-light: #48cae4;
+    --info-bg: rgba(0, 180, 216, 0.15);
+
+    /* ========== GRADIENTS ========== */
+    --gradient-primary: linear-gradient(135deg, #0b4875 0%, #1a6a9e 100%);
+    --gradient-accent: linear-gradient(135deg, #ff6b35 0%, #ff8c5a 100%);
+    --gradient-hero: linear-gradient(180deg, #052538 0%, #0b4875 50%, #1a6a9e 100%);
+    --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+
+    /* ========== SHADOWS ========== */
+    --shadow-sm: 0 2px 4px rgba(5, 37, 56, 0.1);
+    --shadow-md: 0 4px 6px rgba(5, 37, 56, 0.15);
+    --shadow-lg: 0 10px 25px rgba(5, 37, 56, 0.2);
+    --shadow-xl: 0 20px 50px rgba(5, 37, 56, 0.5);
+    --shadow-glow: 0 0 20px rgba(11, 72, 117, 0.5);
+
+    /* ========== SPACING & SIZING ========== */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+
+    /* ========== TYPOGRAPHY ========== */
+    --font-primary: 'Noto Sans', 'Noto Sans SC', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, "Microsoft YaHei", "PingFang SC", sans-serif;
+    --font-heading: 'Noto Sans', 'Noto Sans SC', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, "Microsoft YaHei", "PingFang SC", sans-serif;
+
+
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+
+    --letter-spacing-tight: -0.025em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.025em;
+}
+
+/* ========== GOOGLE FONTS ========== */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap'); */
+
+/* ========== CSS RESET ========== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========== BASE STYLES ========== */
+
+body {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 500;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    overscroll-behavior: contain;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-attachment: fixed;
+}
+
+
+/* ========== IMAGES ========== */
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ========== BUTTONS ========== */
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+
+
+
+/* ========== SCROLLBAR ========== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-light);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-lighter);
+}
+
+/* ========== UTILITY CLASSES ========== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hidden {
+    display: none;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+
+
+/* keyframes */
+@keyframes aroundItem {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes popItem {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes liftItem {
+    0% {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
+    100% {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+}
+
+
+@keyframes fadeRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
