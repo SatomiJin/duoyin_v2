@@ -13,8 +13,17 @@
 
     &:hover {
         cursor: pointer;
-        font-weight: 700;
+        font-weight: 600;
         box-shadow: var(--shadow-xl);
     }
 
+}
+
+@media (max-width: 768px) {
+    .card-word_container {
+        height: 60px;
+        font-size: 20px;
+        flex: 1 1 80px;
+        height: 60px;
+    }
 }

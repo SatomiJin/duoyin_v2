@@ -1,6 +1,4 @@
 .overview-page_container {
-    background-color: rgba(210, 55, 63, 0.8);
-
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -58,32 +56,31 @@
 
 }
 
-// @media (max-width:767px) {
-//     .overview-page_container {
+@media (max-width:767px) {
+    .overview-page_container {
 
 
-//         .introduction {
-//             width: 90vw;
-//             background-color: red;
-//             min-height: 250px;
+        .introduction {
+            width: 95vw;
+            min-height: 250px;
 
-//             .title {
-//                 font-size: 30px;
-//             }
+            .title {
+                font-size: 30px;
+            }
 
-//             .desc {
-//                 font-size: 16px;
-//                 // min-height: 100px;
-//             }
-//         }
+            .desc {
+                font-size: 16px;
+                // min-height: 100px;
+            }
+        }
 
-//         .features-content {
+        .features-content {
 
 
-//             .features-title {
-//                 font-size: 20px;
-//             }
+            .features-title {
+                font-size: 20px;
+            }
 
-//         }
-//     }
-// }
+        }
+    }
+}
