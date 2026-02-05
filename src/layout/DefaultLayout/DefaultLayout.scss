@@ -45,12 +45,26 @@ $sidebar-width: 240px;
     background-attachment: fixed;
     // Original red background color
     background-color: rgba(210, 55, 63, 0.7);
+
+    // Mobile: Add padding to avoid header/footer overlap
+    @media (max-width: 768px) {
+        padding-top: 70px; // Height of mobile header
+        padding-bottom: 90px; // Height of mobile footer
+    }
 }
 
 .default-layout_footer {
     position: sticky;
     bottom: 0;
     z-index: 1000;
+
+    // Mobile: Use fixed positioning
+    @media (max-width: 768px) {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
 }
 
 // Header
