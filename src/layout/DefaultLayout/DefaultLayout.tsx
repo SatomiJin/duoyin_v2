@@ -18,7 +18,7 @@ const DefaultLayout = () => {
                 <Outlet />
             </div>
             <div className="default-layout_footer">
-                <HeaderMobileBottom />
+                {/* <HeaderMobileBottom /> */}
             </div>
         </div>
     );
