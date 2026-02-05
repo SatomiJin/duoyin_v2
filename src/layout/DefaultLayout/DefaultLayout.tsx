@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import HeaderPc from "../../components/HeaderComponet/PC/HeaderPc";
-import { HeaderMobileTop, HeaderMobileBottom } from "../../components/HeaderComponet/Mobile/HeaderMobile";
+import { HeaderMobileTop } from "../../components/HeaderComponet/Mobile/HeaderMobile";
 import './DefaultLayout.scss';
 
 const DefaultLayout = () => {
