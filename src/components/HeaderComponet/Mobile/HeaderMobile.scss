@@ -5,6 +5,8 @@
 @media (max-width: 768px) {
     .header-mobile {
         display: block;
+        width: 100%;
+        // overflow: hidden;
 
         // ========== TOP HEADER ==========
         .mobile-header_top {
@@ -32,6 +34,9 @@
             // Subtle border
             border: 1px solid rgba(255, 255, 255, 0.15);
             border-top: none;
+
+            // Ensure it covers any content behind
+            isolation: isolate;
 
             .top_left {
                 display: flex;
@@ -109,7 +114,7 @@
                     color: rgba(255, 255, 255, 0.7);
                     cursor: pointer;
                     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                    position: relative;
+                    // position: relative;
                     border-radius: 16px;
 
                     // Ripple effect area
@@ -209,7 +214,7 @@
 
                 // ========== HOME BUTTON - SPECIAL STYLING ==========
                 .home {
-                    transform: translateY(-35%);
+                    // transform: translateY(-35%);
 
                     // Gradient background
                     background: linear-gradient(135deg,
@@ -245,7 +250,7 @@
 
                     &:hover,
                     &:focus {
-                        transform: translateY(-35%) scale(1.05);
+                        // transform: translateY(-35%) scale(1.05);
                         box-shadow:
                             0 12px 35px rgba(72, 202, 228, 0.6),
                             0 6px 15px rgba(0, 0, 0, 0.25),
@@ -253,7 +258,7 @@
                     }
 
                     &:active {
-                        transform: translateY(-35%) scale(0.95);
+                        // transform: translateY(-35%) scale(0.95);
                     }
 
                     .icon {

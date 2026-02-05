@@ -70,7 +70,7 @@ export const HeaderMobileBottom = () => {
                             </div>
                         )
                     })}
-                    <div className='item btn-group'>
+                    <div className='item btn-group dropup'>
                         <div className='icon' title="更多操作" data-bs-toggle="dropdown" aria-expanded="false">
                             <i className="fa-solid fa-ellipsis"></i>
                         </div>
