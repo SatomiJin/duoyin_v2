@@ -148,11 +148,6 @@ body {
     font-size: 16px;
     font-weight: 500;
     overflow: hidden;
-    scroll-behavior: smooth;
-    overscroll-behavior: contain;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-attachment: fixed;
 }
 
 

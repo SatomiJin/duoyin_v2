@@ -14,6 +14,7 @@ $sidebar-width: 240px;
 // Default Layout
 .default-layout {
     min-height: 100vh;
+    min-height: 100dvh;
     background-color: $bg-primary;
     color: $text-primary;
 }
@@ -37,8 +38,11 @@ $sidebar-width: 240px;
 
 .default-layout_content {
     flex: 1;
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-attachment: fixed;
     // Original red background color
     background-color: rgba(210, 55, 63, 0.7);
 }
