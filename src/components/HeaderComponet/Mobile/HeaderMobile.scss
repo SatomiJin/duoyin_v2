@@ -225,15 +225,6 @@
                         0 0 0 4px rgba(255, 255, 255, 0.1);
 
                     // Ring animation
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-                        border-radius: 50%;
-                        border: 2px solid rgba(72, 202, 228, 0.5);
-                        animation: pulse-ring 2s ease-out infinite;
-                    }
 
                     &:hover,
                     &:focus {
