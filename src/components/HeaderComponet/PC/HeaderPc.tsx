@@ -1,4 +1,4 @@
-import logo from '../../../assets/logo.png'
+import logo from '../../../Assets/logo.png'
 import './HeaderPc.scss'
 import language from '../../../language/language'
 import { useLocation, useNavigate } from 'react-router-dom';
