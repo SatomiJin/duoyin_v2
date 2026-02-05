@@ -46,11 +46,11 @@ const subMenu = [
 export const HeaderMobileTop = () => {
     return (
         <div className="header-mobile">
-            <div className="mobile-header_top row">
-                <div className='top_left col-6'>
+            <div className="mobile-header_top">
+                <div className='top_left'>
                     <img src={logo} alt="logo" className='logo' />
                 </div>
-                <div className='top_right col-6'>
+                <div className='top_right'>
                     <div className="name">DUOYIN</div>
                 </div>
             </div>
