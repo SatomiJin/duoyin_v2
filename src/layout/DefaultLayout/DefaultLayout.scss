@@ -18,6 +18,33 @@ $sidebar-width: 240px;
     color: $text-primary;
 }
 
+// ========== LAYOUT CONTAINER ==========
+.default-layout_container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: $bg-primary;
+}
+
+.default-layout_header {
+    z-index: 1000;
+    position: relative;
+}
+
+.default-layout_content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    // Original red background color
+    background-color: rgba(210, 55, 63, 0.8);
+}
+
+.default-layout_footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 1000;
+}
+
 // Header
 .header {
     position: fixed;

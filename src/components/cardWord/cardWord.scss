@@ -16,14 +16,53 @@
         font-weight: 600;
         box-shadow: var(--shadow-xl);
     }
-
 }
 
+// ========== MOBILE STYLES ==========
 @media (max-width: 768px) {
     .card-word_container {
-        height: 60px;
-        font-size: 20px;
-        flex: 1 1 80px;
-        height: 60px;
+        height: 65px;
+        min-width: 70px;
+        max-width: 90px;
+        font-size: 22px;
+        font-weight: 500;
+        padding: 8px;
+
+        // Gradient background
+        background: linear-gradient(145deg,
+                #ffffff 0%,
+                #f0f7fc 100%);
+
+        border-radius: 14px;
+        border: 1px solid rgba(72, 202, 228, 0.2);
+
+        // Subtle shadow with color
+        box-shadow:
+            0 4px 12px rgba(0, 0, 0, 0.08),
+            0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+        // Touch-friendly
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 8px 20px rgba(72, 202, 228, 0.25),
+                0 0 0 2px rgba(72, 202, 228, 0.3);
+        }
+
+        // Active/pressed state
+        &:active {
+            transform: scale(0.95);
+            box-shadow:
+                0 2px 8px rgba(0, 0, 0, 0.15),
+                0 0 0 2px rgba(72, 202, 228, 0.4);
+            background: linear-gradient(145deg,
+                    #e8f4fc 0%,
+                    #d0e8f5 100%);
+        }
     }
 }

@@ -9,8 +9,6 @@
         border-radius: 10px;
         box-shadow: var(--shadow-md);
 
-
-
         /* Initial state */
         opacity: 0;
         transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
@@ -27,8 +25,6 @@
     &.is-visible .card_container_pc {
         opacity: 1;
         transform: translateX(0);
-
-
 
         .card_title {
             font-weight: 700;
@@ -53,7 +49,6 @@
             .card_desc {
                 text-align: justify;
                 font-size: 18px;
-
             }
         }
     }
@@ -62,48 +57,94 @@
         display: none;
     }
 
-
-
-
-
+    // ========== MOBILE STYLES ==========
     @media (max-width: 767px) {
         .card_container_pc {
             display: none;
         }
 
         .card_container_mobile {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            padding: 20px;
+            width: 100%;
+
+            // Glassmorphism card
+            background: linear-gradient(145deg,
+                    rgba(255, 255, 255, 0.12) 0%,
+                    rgba(255, 255, 255, 0.05) 100%);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+
+            // Glow shadow
+            box-shadow:
+                0 8px 32px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+
+            // Initial state for animation
             opacity: 0;
-            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 
             .card_img {
-                width: 100px;
-                height: 100px;
+                width: 80px;
+                height: 80px;
+                border-radius: 16px;
+                box-shadow:
+                    0 4px 20px rgba(0, 0, 0, 0.2),
+                    0 0 0 3px rgba(72, 202, 228, 0.3);
+                object-fit: cover;
             }
 
             .card_content {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
 
                 .title {
-                    font-size: 20px;
+                    font-size: 18px;
                     font-weight: 700;
+                    color: #ffffff;
+                    // Subtle gradient
+                    background: linear-gradient(135deg,
+                            #ffffff 0%,
+                            #48cae4 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
                 }
 
                 .desc {
-                    font-size: 16px;
+                    font-size: 14px;
+                    line-height: 1.6;
+                    color: rgba(255, 255, 255, 0.85);
                     text-align: justify;
                 }
             }
         }
 
-        /* Mobile Animation Triggers - Always slide from right (translateX 100px) */
+        // Animation triggers
         &.slide-from-left .card_container_mobile,
         &.slide-from-right .card_container_mobile {
-            transform: translateX(100px);
+            transform: translateY(30px);
         }
 
         &.is-visible .card_container_mobile {
             opacity: 1;
-            transform: translateX(0);
+            transform: translateY(0);
+        }
+
+        // Touch feedback
+        &:active .card_container_mobile {
+            transform: scale(0.98);
+            box-shadow:
+                0 4px 16px rgba(0, 0, 0, 0.2),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset;
         }
     }
 }

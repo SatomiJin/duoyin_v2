@@ -1,9 +1,9 @@
+import './HomePage.scss'
 const HomePage = () => {
     return (
-        <div>
-            <h1>HomePage</h1>
+        <div className="home_page_container">
         </div>
     );
 };
 
-export default HomePage;    
+export default HomePage;   
