@@ -21,9 +21,13 @@ $sidebar-width: 240px;
 // ========== LAYOUT CONTAINER ==========
 .default-layout_container {
     height: 100vh;
+    height: 100dvh; // Fallback & Modern unit
     display: flex;
     flex-direction: column;
     background-color: $bg-primary;
+
+    // Protect top notch area if needed
+    padding-top: env(safe-area-inset-top, 0px);
 }
 
 .default-layout_header {
@@ -36,7 +40,7 @@ $sidebar-width: 240px;
     overflow-y: auto;
     overflow-x: hidden;
     // Original red background color
-    background-color: rgba(210, 55, 63, 0.8);
+    background-color: rgba(210, 55, 63, 0.7);
 }
 
 .default-layout_footer {

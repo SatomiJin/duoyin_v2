@@ -20,7 +20,8 @@
         padding-top: 20px;
 
         .input_search {
-            width: 50vw;
+            width: 90%; // Changed from 50vw
+            max-width: 400px;
             height: 50px;
             text-align: center;
             border-radius: 20px;
@@ -31,8 +32,9 @@
     }
 
     .notebook_content {
-        height: 60vh;
-        width: 70vw;
+        height: 60dvh; // Changed from 60vh
+        width: 100%; // Changed from 70vw to avoid overflow
+        max-width: 800px;
         scroll-behavior: smooth;
         overflow-y: scroll;
         scrollbar-width: auto;
@@ -48,7 +50,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 60vh;
+            height: 60dvh;
         }
     }
 }
@@ -116,7 +118,7 @@
             width: 100%;
             padding: 16px;
             margin-top: 20px;
-            height: calc(100vh - 250px);
+            height: calc(100dvh - 250px);
 
             // Custom scrollbar
             scrollbar-width: thin;
