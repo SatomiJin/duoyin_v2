@@ -9,183 +9,46 @@ $accent-color: #fe2c55;
 $border-color: rgba(255, 255, 255, 0.12);
 
 
-// Default Layout
-.default-layout {
-    background-color: $bg-primary;
-    color: $text-primary;
-}
-
-// ========== LAYOUT CONTAINER ==========
+// ========== LAYOUT FULL MÀN HÌNH ==========
 .default-layout_container {
+    // Full viewport height
     height: 100vh;
-    height: 100dvh; // Fallback & Modern unit
+    height: 100dvh; // Modern unit cho mobile
+
+    // Flex layout để chia header, content, footer
     display: flex;
     flex-direction: column;
+
     background-color: $bg-primary;
 
-    // Protect top notch area if needed
+    // Safe area cho notch trên iPhone
     padding-top: env(safe-area-inset-top, 0px);
 }
 
-.default-layout_header {}
+// ========== HEADER ==========
+.default-layout_header {
+    // Header không chiếm flex space
+    flex-shrink: 0;
+    z-index: 1000;
+}
 
+// ========== CONTENT (Phần scroll) ==========
 .default-layout_content {
+    // Chiếm toàn bộ không gian còn lại
     flex: 1;
+    // Cho phép scroll
     overflow-y: scroll;
     overflow-x: hidden;
-    width: 100%;
+
+    // Styling
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-attachment: fixed;
     background-color: rgba(210, 55, 63, 0.7);
 }
 
-.default-layout_footer {}
-
-// Header
-.header {
-    background-color: $bg-primary;
-    border-bottom: 1px solid $border-color;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-
-    .header-left {
-        flex: 1;
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-
-            .logo-icon {
-                font-size: 28px;
-            }
-
-            .logo-text {
-                font-size: 22px;
-                font-weight: 700;
-                background: linear-gradient(135deg, #25f4ee, #fe2c55);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-        }
-    }
-
-    .header-center {
-        flex: 2;
-        display: flex;
-        justify-content: center;
-
-        .search-box {
-            display: flex;
-            align-items: center;
-            background-color: $bg-tertiary;
-            border-radius: 92px;
-            overflow: hidden;
-            width: 100%;
-            max-width: 400px;
-
-            .search-input {
-                flex: 1;
-                background: transparent;
-                border: none;
-                padding: 12px 16px;
-                color: $text-primary;
-                font-size: 14px;
-                outline: none;
-
-                &::placeholder {
-                    color: $text-tertiary;
-                }
-            }
-
-            .search-btn {
-                background: transparent;
-                border: none;
-                border-left: 1px solid $border-color;
-                padding: 8px 16px;
-                color: $text-secondary;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition: color 0.2s;
-
-                &:hover {
-                    color: $text-primary;
-                }
-            }
-        }
-    }
-
-    .header-right {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 16px;
-
-        .upload-btn {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            background: transparent;
-            border: 1px solid $border-color;
-            border-radius: 4px;
-            padding: 8px 16px;
-            color: $text-primary;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.2s;
-
-            &:hover {
-                background-color: $bg-tertiary;
-            }
-        }
-
-        .login-btn {
-            background-color: $accent-color;
-            border: none;
-            border-radius: 4px;
-            padding: 8px 24px;
-            color: $text-primary;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: opacity 0.2s;
-
-            &:hover {
-                opacity: 0.9;
-            }
-        }
-    }
-}
-
-// Main Container
-.main-container {
-    display: flex;
-}
-
-
-// Content
-.content {
-    flex: 1;
-    padding: 20px 0;
-}
-
-// Responsive
-@media (max-width: 768px) {
-    .header {
-        .header-center {
-            flex: 1;
-
-        }
-
-
-    }
+// ========== FOOTER ==========
+.default-layout_footer {
+    // Footer không chiếm flex space
+    flex-shrink: 0;
 }
