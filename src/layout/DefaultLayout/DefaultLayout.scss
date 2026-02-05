@@ -8,13 +8,9 @@ $text-tertiary: rgba(255, 255, 255, 0.5);
 $accent-color: #fe2c55;
 $border-color: rgba(255, 255, 255, 0.12);
 
-$header-height: 60px;
-$sidebar-width: 240px;
 
 // Default Layout
 .default-layout {
-    min-height: 100vh;
-    min-height: 100dvh;
     background-color: $bg-primary;
     color: $text-primary;
 }
@@ -48,15 +44,12 @@ $sidebar-width: 240px;
 
 // Header
 .header {
-
-    height: $header-height;
     background-color: $bg-primary;
     border-bottom: 1px solid $border-color;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    z-index: 1000;
 
     .header-left {
         flex: 1;
@@ -176,17 +169,13 @@ $sidebar-width: 240px;
 // Main Container
 .main-container {
     display: flex;
-    padding-top: $header-height;
-    min-height: 100dvh;
 }
 
 
 // Content
 .content {
     flex: 1;
-    margin-left: $sidebar-width;
-    padding: 20px;
-    min-height: calc(100dvh - #{$header-height});
+    padding: 20px 0;
 }
 
 // Responsive
