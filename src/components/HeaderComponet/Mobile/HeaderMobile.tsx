@@ -1,5 +1,7 @@
 import './HeaderMobile.scss'
 import logo from '../../../Assets/logo.png'
+import { useNavigate } from 'react-router-dom'
+
 
 
 const menu = [
@@ -43,6 +45,9 @@ const subMenu = [
     }
 ]
 
+
+
+
 export const HeaderMobileTop = () => {
     return (
         <div className="header-mobile">
@@ -59,13 +64,18 @@ export const HeaderMobileTop = () => {
 }
 
 export const HeaderMobileBottom = () => {
+    const navigate = useNavigate();
+    const handleNavigate = (path: string) => {
+        if (path === 'home') navigate('/');
+        else navigate(`/${path}`);
+    }
     return (
         <div className="header-mobile">
             <div className="mobile-header_bottom">
                 <div className="menu-items">
                     {menu.map((item, index) => {
                         return (
-                            <div key={index} className={`item ${item.path}`} title={item.text} >
+                            <div key={index} className={`item ${item.path}`} title={item.text} onClick={() => handleNavigate(item?.path)}>
                                 <div className="icon">{item.icon}</div>
                             </div>
                         )
