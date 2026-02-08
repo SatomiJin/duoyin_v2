@@ -125,7 +125,7 @@ const PopUpExerciseComponent = ({ data, type, setIsOpenPopUp }: PopUpExerciseCom
                 correct++;
             }
         });
-        alert(`Bạn đúng ${correct}/${questionData.length} câu`);
+        alert(`Bạn đúng ${correct}/${questionData.length} câu.`);
         setAnswerUser([]);
     };
 
