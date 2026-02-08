@@ -1,7 +1,7 @@
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 import './FeaturesCard.scss'
 const FeaturesCard = ({ props }: { props: any }) => {
-    const { containerRef, isVisible } = useIntersectionObserver({ threshold: 0.5 });
+    const { containerRef, isVisible } = useIntersectionObserver({ triggerOnce: true });
 
     const animationClass = props.align === 'right' ? 'slide-from-left' : 'slide-from-right';
 
