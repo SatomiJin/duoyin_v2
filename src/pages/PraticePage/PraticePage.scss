@@ -23,6 +23,7 @@
         color: rgba(0, 0, 0, 0.75);
         margin-bottom: 20px;
         font-style: italic;
+        text-align: center;
     }
 
     .practice-page_option {
@@ -86,5 +87,24 @@
 
     100% {
         width: 100%;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .practice-page_container {
+        .practice-page_title {
+            font-size: 24px;
+        }
+
+        .practice-page_subtitle {
+            font-size: 20px;
+        }
+
+        .practice-page_option {
+            .option-item {
+                width: 90%;
+            }
+        }
     }
 }

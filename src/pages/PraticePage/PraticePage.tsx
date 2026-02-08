@@ -3,40 +3,51 @@ import { getDataBaiTap } from '../../services';
 import { useEffect, useState } from 'react';
 import { normalizeDataBaiTap } from '../../utils/normalizeDataBaiTap';
 import practice from '../../language/practice';
+import PopUpExerciseComponent from '../../components/PopUpExerciseComponent/PopUpExerciseComponent';
 const PraticePage = () => {
     const [dataBaiTap, setDataBaiTap] = useState([]);
+    const [type, setType] = useState("");
     const [dataNormalized, setDataNormalized] = useState({});
-    const [loading, setLoading] = useState(true);
     const EXPIRE_TIME = 1000 * 60 * 60 * 6; //time
-    const handleGetDataBaiTap = async () => {
+    const [isOpenPopUp, setIsOpenPopUp] = useState(false);
 
+
+
+
+    const handleGetDataBaiTap = async () => {
         const res = await getDataBaiTap();
         if (!res) return [];
         if (res && res?.values && res?.values.length > 0) {
-            setDataBaiTap(res?.values.slice(Number(import.meta.env.VITE_BAITAP_START_ROW)))
-            return res?.values.slice(Number(import.meta.env.VITE_BAITAP_START_ROW))
+            const data = res?.values.slice(Number(import.meta.env.VITE_BAITAP_START_ROW))
+            setDataBaiTap(data)
+            localStorage.setItem(import.meta.env.VITE_CACHE_KEY, JSON.stringify(data));
+            localStorage.setItem(import.meta.env.VITE_CACHE_TIME_KEY, String(Date.now()));
+            return data
         }
     }
     const getDataBaiTapFromLocalStorage = () => {
         const cache = localStorage.getItem(`${import.meta.env.VITE_CACHE_KEY}`);
         const cacheTime = localStorage.getItem(`${import.meta.env.VITE_CACHE_TIME_KEY}`);
-        if (cache && cacheTime) {
+        if (cache && cache !== '{}' && cacheTime) {
             const isExpired = Date.now() - Number(cacheTime) > EXPIRE_TIME;
             if (!isExpired) {
                 setDataBaiTap(JSON.parse(cache))
                 return JSON.parse(cache);
             }
         }
-        const res = handleGetDataBaiTap();
-        localStorage.setItem(import.meta.env.VITE_CACHE_KEY, JSON.stringify(res));
-        localStorage.setItem(import.meta.env.VITE_CACHE_TIME_KEY, String(Date.now()));
-        return res;
-    }
 
+        handleGetDataBaiTap();
+    }
+    // chọn bài tập 
+    const handleSelectPractice = (typeOption: any) => {
+
+        setIsOpenPopUp(true);
+        setType(typeOption);
+    }
     const renderItem = () => {
         return practice.map((item) => {
             return (
-                <div className='option-item' key={item.type}>
+                <div className='option-item' key={item.type} onClick={() => handleSelectPractice(item.type)}>
                     <div className='option-item_title'>{item.title} </div>
                     {item?.titleCn && item?.titleCn !== "" && <div className='option-item_title_cn'>{item?.titleCn}</div>}
                 </div>
@@ -44,11 +55,18 @@ const PraticePage = () => {
         })
     }
 
+
+
+    // use effect
     useEffect(() => {
         getDataBaiTapFromLocalStorage();
     }, []);
+
+
+
     useEffect(() => {
         if (dataBaiTap && dataBaiTap?.length > 0) {
+
             const normalizedData = normalizeDataBaiTap(dataBaiTap);
             if (normalizedData) {
                 setDataNormalized((prev) => ({
@@ -58,6 +76,7 @@ const PraticePage = () => {
             }
         }
     }, [dataBaiTap]);
+
 
 
     return (
@@ -70,6 +89,7 @@ const PraticePage = () => {
             <div className='practice-page_option'>
                 {renderItem()}
             </div>
+            {isOpenPopUp && <PopUpExerciseComponent setIsOpenPopUp={setIsOpenPopUp} type={type} data={dataNormalized[type]} />}
         </div>
     );
 };

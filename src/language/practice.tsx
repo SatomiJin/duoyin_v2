@@ -2,22 +2,22 @@ const practice = [
     {
         title: "Điền phiên âm",
         titleCn: "title tiếng trung",
-        type: 1
+        type: "baiTap1"
     },
     {
         title: "Chọn nghĩa tương ứng",
         titleCn: "title tiếng trung",
-        type: 2
+        type: "baiTap2"
     },
     {
         title: "Chọn câu chữ Hán tương ứng",
         titleCn: "title tiếng trung",
-        type: 3
+        type: "baiTap3"
     },
     {
         title: "Phán đoán đúng sai",
         titleCn: "title tiếng trung",
-        type: 4
+        type: "baiTap4"
     }
 ]
 
