@@ -5,9 +5,9 @@ import { normalizeDataBaiTap } from '../../utils/normalizeDataBaiTap';
 import practice from '../../language/practice';
 import PopUpExerciseComponent from '../../components/PopUpExerciseComponent/PopUpExerciseComponent';
 const PraticePage = () => {
-    const [dataBaiTap, setDataBaiTap] = useState([]);
-    const [type, setType] = useState("");
-    const [dataNormalized, setDataNormalized] = useState({});
+    const [dataBaiTap, setDataBaiTap] = useState<any[]>([]);
+    const [type, setType] = useState<string>("");
+    const [dataNormalized, setDataNormalized] = useState<any>({});
     const EXPIRE_TIME = 1000 * 60 * 60 * 6; //time
     const [isOpenPopUp, setIsOpenPopUp] = useState(false);
 
@@ -69,7 +69,7 @@ const PraticePage = () => {
 
             const normalizedData = normalizeDataBaiTap(dataBaiTap);
             if (normalizedData) {
-                setDataNormalized((prev) => ({
+                setDataNormalized((prev: any) => ({
                     ...prev,
                     ...normalizedData
                 }));
