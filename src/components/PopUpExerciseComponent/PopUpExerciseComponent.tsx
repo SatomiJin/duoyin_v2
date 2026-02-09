@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './PopUpExerciseComponent.scss';
+import { highlightBracketText } from '../../utils/utils';
 
 interface PopUpExerciseComponentProps {
     data: any;
@@ -65,18 +66,18 @@ const PopUpExerciseComponent = ({ data, type, setIsOpenPopUp }: PopUpExerciseCom
     //onchange user option 
     const handleSelectAnswer = (questionId: string, option: string) => {
         setAnswerUser((prev: any[]) => {
-            const existed = prev.find((a: any) => a.questionId === questionId);
+            const existed = prev.find((a: any) => String(a.questionId) === String(questionId));
 
             if (existed) {
                 if (type === 'baiTap2' || type === 'baiTap3') {
                     return prev.map((a: any) =>
-                        a.questionId === questionId
+                        String(a.questionId) === String(questionId)
                             ? { ...a, answer: option.split('.')[0] }
                             : a
                     );
                 }
                 return prev.map((a: any) =>
-                    a.questionId === questionId
+                    String(a.questionId) === String(questionId)
                         ? { ...a, answer: option }
                         : a
                 );
@@ -129,7 +130,6 @@ const PopUpExerciseComponent = ({ data, type, setIsOpenPopUp }: PopUpExerciseCom
         setAnswerUser([]);
     };
 
-
     // use effect
     useEffect(() => {
         if (data && data?.length > 0) {
@@ -137,6 +137,7 @@ const PopUpExerciseComponent = ({ data, type, setIsOpenPopUp }: PopUpExerciseCom
             setQuestionData(questions);
         }
     }, [data, type]);
+
 
     return (
         <div className="pop-up_container" onClick={() => setIsOpenPopUp(false)}>
@@ -149,25 +150,55 @@ const PopUpExerciseComponent = ({ data, type, setIsOpenPopUp }: PopUpExerciseCom
                 <div className="pop-up_content">
                     {questionData.map((item: any, index: number) => (
                         <div key={index} className="question-item_select">
-                            <div className="question-item_title">{index + 1}. {item.question}</div>
-                            <div className="question-item_answer">
-                                {item && item?.options && item?.options.length > 0 && item?.options.map((option: any, optionIndex: number) => (
+                            <div className="question-item_title">{index + 1}. {highlightBracketText(item.question)}</div>
+                            < div className="question-item_answer">
+                                {type && (type === 'baiTap2' || type === 'baiTap3') && item && item?.options && item?.options.length > 0 && item?.options.map((option: any, optionIndex: number) => (
                                     <div key={optionIndex} className="option-item">
-                                        <input
-                                            type="radio"
-                                            id={option}
-                                            name={item.id}
-                                            checked={
-                                                answerUser.find((a: any) => a.questionId === item.id)?.answer ===
-                                                (type === 'baiTap2' || type === 'baiTap3'
-                                                    ? option.split('.')[0]
-                                                    : option)
-                                            }
-                                            onChange={() => handleSelectAnswer(item.id, option)}
-                                        />
-                                        <label htmlFor={option}>{option}</label>
+                                        {type && (type === 'baiTap2' || type === 'baiTap3') && <>
+                                            <input
+                                                type="radio"
+                                                id={option}
+                                                name={item.id}
+                                                checked={
+                                                    answerUser.find((a: any) => a.questionId === item.id)?.answer ===
+                                                    (type === 'baiTap2' || type === 'baiTap3'
+                                                        ? option.split('.')[0]
+                                                        : option)
+                                                }
+                                                onChange={() => handleSelectAnswer(item.id, option)}
+                                            />
+                                            <label htmlFor={option}>{option}</label></>}
                                     </div>
                                 ))}
+                                {/* Bài tập dạng input */}
+                                {type && type === 'baiTap1' && <>
+                                    <input
+                                        type="text"
+                                        className='input_answer'
+                                        name={item.id}
+                                        value={
+                                            answerUser.find((a: any) => a.questionId === item.id)?.answer || ''
+                                        }
+                                        onChange={(e) => handleSelectAnswer(item.id, e.target.value)}
+                                    />
+                                </>}
+                                {/* Bài dập dạng select dropdown */}
+                                {type && type === 'baiTap4' && <>
+                                    <select
+                                        className='select_answer'
+                                        name={item.id}
+                                        value={
+                                            answerUser.find((a: any) => a.questionId === item.id)?.answer || ''
+                                        }
+                                        onChange={(e) => handleSelectAnswer(item.id, e.target.value)}
+                                    >
+                                        {/* // 错: sai, 对: đúng */}
+                                        <option value="">Chọn đáp án</option>
+                                        <option value="错">错</option>
+                                        <option value="对">对</option>
+
+                                    </select>
+                                </>}
                             </div>
                         </div>
                     ))}
