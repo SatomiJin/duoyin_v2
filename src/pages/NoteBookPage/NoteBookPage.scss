@@ -43,6 +43,15 @@
         justify-content: center;
         gap: 10px;
         align-content: start;
+        // background-color: white;
+
+        .notebook_no_data {
+            grid-column: 1 / -1;
+            text-align: center;
+            font-size: 25px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
 
         &.loading {
             display: flex;

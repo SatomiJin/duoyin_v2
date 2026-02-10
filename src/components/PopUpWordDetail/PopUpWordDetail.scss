@@ -1,0 +1,41 @@
+.popup_word_detail_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    .popup_word_detail_content {
+        width: 90%;
+        height: 90%;
+        background-color: #fff;
+        border-radius: 10px;
+
+        .popup_word_detail_content_header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+
+            padding: 10px 20px;
+
+            .text {
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            .btn-close {
+                width: 24px;
+                height: 24px;
+                background-color: #ccc;
+                border-radius: 50%;
+            }
+        }
+    }
+}

@@ -13,3 +13,17 @@ export const getDataBaiTap = async () => {
 
     return res.data;
 }
+
+
+
+export const getGifdetailTuVung = async (id: string) => {
+    const wordName = `${id}.gif`;
+    const res = await axios.get(
+        `https://www.googleapis.com/drive/v3/files` +
+        `?key=${import.meta.env.VITE_API_KEY}` +
+        `&q=name='${wordName}' and '${import.meta.env.VITE_GOOGLE_DRIVE_FOLDER_ID}' in parents`
+    );
+    console.log(import.meta.env.VITE_BASE_LINK_DRIVE + res.data.files[0].id);
+
+    return res.data.files[0].id;
+}

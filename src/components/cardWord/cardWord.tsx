@@ -1,7 +1,14 @@
 import './cardWord.scss'
-const CardWord = ({ props }: { props: any }) => {
+type CardWordProps = {
+    props: {
+        word: any;
+    };
+    onClick?: () => void;
+};
+
+const CardWord = ({ props, onClick }: CardWordProps) => {
     return (
-        <div className="card-word_container">
+        <div className="card-word_container" onClick={onClick}>
             <div className="word">{props?.word}</div>
         </div>
     )

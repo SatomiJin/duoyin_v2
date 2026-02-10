@@ -35,7 +35,7 @@ const useIntersectionObserver = (options?: UseIntersectionObserverOptions) => {
                 setIsVisible(false);
             }
         }, {
-            threshold: 0.2, // Giảm từ 0.5 xuống 0.2 để trigger sớm hơn
+            threshold: 0.5, // Giảm từ 0.5 xuống 0.2 để trigger sớm hơn
             rootMargin: '0px 0px -50px 0px', // Tránh vùng trùng lấn ở bottom
             ...observerOptions
         });

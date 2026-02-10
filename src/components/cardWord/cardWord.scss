@@ -9,12 +9,19 @@
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
     font-size: 25px;
-    transition: all 0.3s ease-in-out;
+    user-select: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover {
         cursor: pointer;
         font-weight: 600;
         box-shadow: var(--shadow-xl);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        transform: scale(0.95);
+        transition: transform 0.05s;
     }
 }
 
@@ -57,6 +64,7 @@
         // Active/pressed state
         &:active {
             transform: scale(0.95);
+            transition: transform 0.05s;
             box-shadow:
                 0 2px 8px rgba(0, 0, 0, 0.15),
                 0 0 0 2px rgba(72, 202, 228, 0.4);
@@ -64,5 +72,6 @@
                     #e8f4fc 0%,
                     #d0e8f5 100%);
         }
+
     }
 }
