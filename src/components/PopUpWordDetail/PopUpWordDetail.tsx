@@ -102,7 +102,7 @@ const PopUpWordDetail = ({ props }: PopUpWordDetailProps) => {
                                 {detailTuVung && detailTuVung.length > 0 && detailTuVung.map((item: any, index: number) => (
                                     <tr className='table_item_row' key={index}>
                                         <th scope="row">{index + 1}</th>
-                                        <td><i onClick={() => handlePlayAudio(String(index + 1))} style={{ cursor: 'pointer' }} className="fa-solid fa-volume-high"></i> {item[0]}</td>
+                                        <td style={{ display: 'flex', justifyContent: "center", alignItems: 'center' }}><i onClick={() => handlePlayAudio(String(index + 1))} style={{ cursor: 'pointer' }} className="fa-solid fa-volume-high"></i> {item[0]}</td>
                                         <td>{item[1]}</td>
                                         <td>
                                             {splitNumberedText(item[2]).map((text, i) => (
