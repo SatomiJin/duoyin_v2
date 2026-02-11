@@ -18,12 +18,21 @@ export const getDataBaiTap = async () => {
 
 export const getGifdetailTuVung = async (id: string) => {
     const wordName = `${id}.gif`;
-    const res = await axios.get(
-        `https://www.googleapis.com/drive/v3/files` +
-        `?key=${import.meta.env.VITE_API_KEY}` +
-        `&q=name='${wordName}' and '${import.meta.env.VITE_GOOGLE_DRIVE_FOLDER_ID}' in parents`
-    );
-    console.log(import.meta.env.VITE_BASE_LINK_DRIVE + res.data.files[0].id);
-
-    return res.data.files[0].id;
+    try {
+        const res = await axios.get(
+            `https://www.googleapis.com/drive/v3/files`, {
+            params: {
+                key: import.meta.env.VITE_API_KEY,
+                q: `name='${wordName}' and '${import.meta.env.VITE_GOOGLE_DRIVE_FOLDER_ID}' in parents`
+            }
+        }
+        );
+        if (res.data.files && res.data.files.length > 0) {
+            return `https://lh3.googleusercontent.com/u/0/d/${res.data.files[0].id}`;
+        }
+        return null;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
 }
