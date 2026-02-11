@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { getGifdetailTuVung } from '../../services';
 import './PopUpWordDetail.scss'
 type PopUpWordDetailProps = {
     props: {
