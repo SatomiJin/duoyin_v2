@@ -37,7 +37,7 @@ $border-color: rgba(255, 255, 255, 0.12);
     // Chiếm toàn bộ không gian còn lại
     flex: 1;
     // Cho phép scroll
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     // min-height: 100dvh;
     // Styling
