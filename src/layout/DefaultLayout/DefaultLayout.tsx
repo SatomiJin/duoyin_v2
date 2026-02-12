@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import HeaderPc from "../../components/HeaderComponet/PC/HeaderPc";
 import { HeaderMobileTop, HeaderMobileBottom } from "../../components/HeaderComponet/Mobile/HeaderMobile";
 import './DefaultLayout.scss';
+import FooterComponent from "../../components/FooterComponent/FooterComponent";
 
 const DefaultLayout = () => {
 
@@ -18,6 +19,7 @@ const DefaultLayout = () => {
                 <Outlet />
             </div>
             <div className="default-layout_footer">
+                <FooterComponent />
                 <HeaderMobileBottom />
             </div>
         </div>

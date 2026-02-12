@@ -1,0 +1,96 @@
+.footer-component_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--bg-secondary);
+    padding: 50px;
+    color: var(--bg-white);
+
+    .footer-component_copyright {
+        flex: 2;
+        font-size: 20px;
+        font-weight: 400;
+
+        .title {
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 10px;
+
+
+        }
+    }
+
+    .footer-component_contact {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        // background-color: red;
+        height: 100%;
+
+        .item {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 20px;
+            transition: all 0.3s ease;
+
+            i {
+                font-size: 40px !important;
+                margin-right: 10px;
+            }
+
+            &:hover {
+                cursor: pointer;
+                // color: var(--primary-color);
+                transform: scale(0.98);
+                transform: translateY(-2px);
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 767px) {
+    .footer-component_container {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        justify-content: center;
+        // align-items: center;
+
+        .footer-component_copyright {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 400;
+            flex: 1;
+
+            .title {
+                font-size: 20px;
+            }
+        }
+
+        .footer-component_contact {
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            // align-items: center;
+            flex: 1;
+
+            .item {
+                font-size: 14px;
+                margin-bottom: 10px;
+
+                i {
+                    font-size: 20px !important;
+                }
+            }
+        }
+    }
+}
