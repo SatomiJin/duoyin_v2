@@ -12,7 +12,7 @@ $border-color: rgba(255, 255, 255, 0.12);
 // ========== LAYOUT FULL MÀN HÌNH ==========
 .default-layout_container {
     // Full viewport height
-    height: 100vh;
+    height: 100dvh;
     height: 100dvh; // Modern unit cho mobile
 
     // Flex layout để chia header, content, footer
@@ -22,7 +22,7 @@ $border-color: rgba(255, 255, 255, 0.12);
     background-color: $bg-primary;
 
     // Safe area cho notch trên iPhone
-    padding-top: env(safe-area-inset-top, 0px);
+    // padding-top: env(safe-area-inset-top, 0px);
 }
 
 // ========== HEADER ==========
