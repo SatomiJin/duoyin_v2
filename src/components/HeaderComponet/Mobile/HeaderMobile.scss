@@ -5,6 +5,7 @@
 @media (max-width: 768px) {
     .header-mobile {
         display: block;
+        background-color: var(--bg-primary);
 
         // ========== TOP HEADER ==========
         .mobile-header_top {
@@ -66,6 +67,8 @@
         // ========== BOTTOM NAVIGATION ==========
         .mobile-header_bottom {
             // Glassmorphism background
+            background-color: red;
+            // z-index: 1000;
             background: linear-gradient(180deg,
                     rgba(11, 72, 117, 0.98) 0%,
                     rgba(5, 37, 56, 0.98) 100%);
