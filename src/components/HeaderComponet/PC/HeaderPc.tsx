@@ -2,6 +2,7 @@ import logo from '../../../Assets/logo.png'
 import './HeaderPc.scss'
 import language from '../../../language/language'
 import { useLocation, useNavigate } from 'react-router-dom';
+import { handleNavigateMail } from '../../../utils/utils';
 const HeaderPc = () => {
     const navigate = useNavigate()
     const menuItems = (data: any, index: number) => {
@@ -14,9 +15,11 @@ const HeaderPc = () => {
 
 
     const handleNavigate = (path: string) => {
-        // navigate()
-        if (path === 'practice' || path === 'forum' || path === 'help') return;
-        navigate(path);
+        if (path !== 'forum' && path !== 'help') navigate(path);
+
+        if (path === 'forum') window.location.href = import.meta.env.VITE_FACEBOOK_GROUP_LINK
+        if (path === 'help') handleNavigateMail()
+
     }
     return (
         <div className="header-pc_container">

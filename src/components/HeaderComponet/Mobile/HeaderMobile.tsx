@@ -1,6 +1,7 @@
 import './HeaderMobile.scss'
 import logo from '../../../Assets/logo.png'
 import { useNavigate } from 'react-router-dom'
+import { handleNavigateMail } from '../../../utils/utils'
 
 
 
@@ -69,6 +70,19 @@ export const HeaderMobileBottom = () => {
         if (path === 'home') navigate('/');
         else navigate(`/${path}`);
     }
+    const handleNavigateSub = (path: string) => {
+
+        if (path === 'video') {
+            navigate(`/${path}`);
+        }
+        if (path === 'forum') {
+            window.location.href = 'https://www.facebook.com/profile.php?id=61557907629340&sk=about'
+        }
+        if (path === 'help') {
+            handleNavigateMail()
+        }        // alert("Chức năng đang phát triển")
+
+    }
     return (
         <div className="header-mobile">
             <div className="mobile-header_bottom">
@@ -87,7 +101,7 @@ export const HeaderMobileBottom = () => {
                         <ul className="dropdown-menu">
                             {subMenu.map((item, index) => {
                                 return (
-                                    <li className="dropdown-item" key={index}>
+                                    <li className="dropdown-item" key={index} onClick={() => handleNavigateSub(item?.path)}>
                                         <div className='icon'>{item.icon}</div>
                                         <div className='text'>{item.text}</div>
                                     </li>

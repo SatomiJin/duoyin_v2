@@ -22,7 +22,7 @@ const language = [
     {
         text: "视频", icon: <i className="fa-solid fa-circle-play"></i>,
         desc: "Video",
-        path: "video"
+        path: "/video"
     },
     {
         text: "论坛", icon: <i className="fa-solid fa-user-group"></i>,

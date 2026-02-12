@@ -46,3 +46,15 @@ export const searchHanTu = (data: any, keyword: string) => {
         })
     );
 }
+
+
+//chuyển tới mail 
+export const handleNavigateMail = () => {
+    const email = import.meta.env.VITE_EMAIL
+    const subject = encodeURIComponent('HỖ TRỢ VỀ CHỦ ĐỀ/ỨNG DỤNG WEB');
+    const body = encodeURIComponent('Chào DUOYIN,\n\nMình cần hỗ trợ về...\n\n');
+
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+
+    window.open(gmailUrl, '_blank');
+}

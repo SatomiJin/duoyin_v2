@@ -124,19 +124,7 @@
             font-weight: 800;
             margin-bottom: 6px;
             // Gradient text matching NoteBookPage
-            background: linear-gradient(135deg,
-                    var(--primary-color) 0%,
-                    var(--secondary-light) 50%,
-                    var(--primary-color) 100%);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: 2px;
 
-            &::after {
-                display: none;
-            }
         }
 
         .practice-page_subtitle {

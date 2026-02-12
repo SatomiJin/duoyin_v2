@@ -4,6 +4,7 @@ import HomePage from "../pages/HomePage/HomePage";
 import NoteBookPage from "../pages/NoteBookPage/NoteBookPage";
 import OverviewPage from "../pages/OverviewPage/OverviewPage";
 import PraticePage from "../pages/PraticePage/PraticePage";
+import VideoPage from "../pages/VideoPage/VideoPage";
 
 export default function AppRoutes() {
     return (
@@ -13,6 +14,7 @@ export default function AppRoutes() {
                 <Route path="/notebook" element={<NoteBookPage />} />
                 <Route path="/overview" element={<OverviewPage />} />
                 <Route path="/practice" element={<PraticePage />} />
+                <Route path="/video" element={<VideoPage />} />
             </Route>
 
 
