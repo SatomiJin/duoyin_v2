@@ -50,11 +50,17 @@ export const searchHanTu = (data: any, keyword: string) => {
 
 //chuyển tới mail 
 export const handleNavigateMail = () => {
-    const email = import.meta.env.VITE_EMAIL
+    const email = import.meta.env.VITE_EMAIL;
     const subject = encodeURIComponent('HỖ TRỢ VỀ CHỦ ĐỀ/ỨNG DỤNG WEB');
-    const body = encodeURIComponent('Chào DUOYIN,\n\nMình cần hỗ trợ về...\n\n');
+    const body = encodeURIComponent(
+        'Chào 𝗗𝗨𝗢𝗬𝗜𝗡,\n\nMình cần hỗ trợ về...\n\n'
+    );
 
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+    const gmailUrl =
+        `https://mail.google.com/mail/u/0/?view=cm&fs=1` +
+        `&to=${email}` +
+        `&su=${subject}` +
+        `&body=${body}`;
 
-    window.open(gmailUrl, '_blank');
+    window.location.href = gmailUrl; // ❗ dùng href thay vì open
 }
