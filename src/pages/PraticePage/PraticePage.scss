@@ -1,12 +1,12 @@
 .practice-page_container {
     background: linear-gradient(180deg, var(--bg-light) 0%, #e4eff8 100%);
+    padding: 50px 0;
     height: 100%;
-    width: 100%;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding: 50px 20px;
+    overflow-y: auto;
 
     .practice-page_title {
         font-size: 42px;
