@@ -69,18 +69,22 @@
             // Glassmorphism background
             background-color: red;
             // z-index: 1000;
-            background: linear-gradient(180deg,
-                    rgba(11, 72, 117, 0.98) 0%,
-                    rgba(5, 37, 56, 0.98) 100%);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
+            background: linear-gradient(135deg,
+                    rgba(11, 72, 117, 0.95) 0%,
+                    rgba(26, 106, 158, 0.9) 50%,
+                    rgba(13, 90, 143, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            // padding: 15px 20px;
+            // Glow shadow
+            box-shadow:
+                0 4px 30px rgba(11, 72, 117, 0.4),
+                0 1px 0 rgba(255, 255, 255, 0.1) inset;
+
 
             border-radius: 24px 24px 0 0;
 
             // Glow effect
-            box-shadow:
-                0 -4px 30px rgba(11, 72, 117, 0.5),
-                0 -1px 0 rgba(255, 255, 255, 0.1) inset;
 
             border: 1px solid rgba(224, 208, 208, 0.5);
             border-bottom: none;

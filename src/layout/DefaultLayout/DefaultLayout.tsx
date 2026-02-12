@@ -17,9 +17,9 @@ const DefaultLayout = () => {
                 id="scroll-container"
             >
                 <Outlet />
+                <FooterComponent />
             </div>
             <div className="default-layout_footer">
-                <FooterComponent />
                 <HeaderMobileBottom />
             </div>
         </div>

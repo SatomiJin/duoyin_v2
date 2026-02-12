@@ -49,5 +49,5 @@ $border-color: rgba(255, 255, 255, 0.12);
 // ========== FOOTER ==========
 .default-layout_footer {
     // Footer không chiếm flex space
-    flex-shrink: 1;
+    flex-shrink: 0;
 }
