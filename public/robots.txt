@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://duoyin-v2-cdii.vercel.app/sitemap.xml
