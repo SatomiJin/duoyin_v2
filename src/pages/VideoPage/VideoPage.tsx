@@ -7,7 +7,7 @@ const VideoPage = () => {
     }
     return (
         <div className="video-page_container">
-            <div className="video-page_title">Video phân biệt các âm đọc của chữ</div>
+            <h1 className="video-page_title">Video phân biệt các âm đọc của chữ</h1>
             <div className="video-page_content">
                 <div className="item_video" onClick={() => handleNavigate('video1')}>Học ngay chữ Hán đa âm “给” chỉ với một câu nói???</div>
                 <div className="item_video" onClick={() => handleNavigate('video2')}>Học ngay chữ Hán đa âm “为” chỉ với một câu nói???</div>

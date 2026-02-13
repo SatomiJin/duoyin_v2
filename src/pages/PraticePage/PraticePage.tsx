@@ -81,11 +81,11 @@ const PraticePage = () => {
 
     return (
         <div className='practice-page_container'>
-            <div className='practice-page_title'>
+            <h1 className='practice-page_title'>
                 Bài tập (练习)
-            </div>
-            <div className='practice-page_subtitle'>Chọn một trong số các dạng bài tập dưới đây để bắt đầu
-            </div>
+            </h1>
+            <h2 className='practice-page_subtitle'>Chọn một trong số các dạng bài tập dưới đây để bắt đầu
+            </h2>
             <div className='practice-page_option'>
                 {renderItem()}
             </div>

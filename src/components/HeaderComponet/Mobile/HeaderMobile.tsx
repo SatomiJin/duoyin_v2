@@ -57,7 +57,7 @@ export const HeaderMobileTop = () => {
                     <img src={logo} alt="logo" className='logo' />
                 </div>
                 <div className='top_right'>
-                    <div className="name">DUOYIN</div>
+                    <h1 className="name">DUOYIN</h1>
                 </div>
             </div>
         </div>

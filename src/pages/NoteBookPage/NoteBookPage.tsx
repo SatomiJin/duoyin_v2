@@ -68,7 +68,7 @@ const NoteBookPage = () => {
 
     return (
         <div className='notebook_container'>
-            <div className='notebook_title'>DUOYIN</div>
+            <h1 className='notebook_title'>Sổ tay từ vựng (词汇本)</h1>
             <div className='notebook_search'>
                 <input onChange={e => handleOnchangeSearch(e)} className='input_search' type="text" placeholder='Nhập từ cần tìm...' />
             </div>

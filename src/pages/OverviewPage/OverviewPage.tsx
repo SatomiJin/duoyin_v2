@@ -7,11 +7,11 @@ const OverviewPage = () => {
     return (
         <div className='overview-page_container'>
             <div className='introduction'>
-                <div className='title'>DUOYIN</div>
+                <h1 className='title'>Tổng quan về DUOYIN</h1>
                 <div className='desc'><TypingText /></div>
             </div>
             <div className='features-content'>
-                <div className='features-title'>Tính năng nổi bật</div>
+                <h2 className='features-title'>Tính năng nổi bật</h2>
                 <div className='items'>
                     {overviewFeatures.map((item, index) => (
                         <div className='item' style={index % 2 === 0 ? { justifyContent: 'flex-start' } : { justifyContent: 'flex-end' }} >
