@@ -39,6 +39,15 @@ $border-color: rgba(255, 255, 255, 0.12);
     // Cho phép scroll
     overflow-y: auto;
     overflow-x: hidden;
+
+    // Ẩn scrollbar nhưng vẫn scroll được
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none; // IE/Edge cũ
+
+    &::-webkit-scrollbar {
+        display: none; // Chrome, Safari, Edge mới
+    }
+
     // Styling
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

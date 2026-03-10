@@ -14,7 +14,7 @@ const FooterComponent = () => {
             <div className="footer-component_copyright">
                 <div className='title'>Bản quyền</div>
                 <div className='content'>
-                    © 2026 Nhóm sinh viên nghiên cứu đề tài “Thiết kế và xây dựng hệ thống ngữ liệu trực tuyến chữ Hán đa âm”.
+                    © 2024 Nhóm sinh viên nghiên cứu đề tài “Thiết kế và xây dựng hệ thống ngữ liệu trực tuyến chữ Hán đa âm”.
                     <br />Technical implementation by Jin.
                 </div>
             </div>
