@@ -22,10 +22,11 @@ const NoteBookPage = () => {
         if (res && res?.values?.length > 0) {
             // Cột STT (index 1) bị đánh lại 1..20 cho từng người phụ trách nên trùng nhau,
             // trong khi gif/audio đặt tên theo thứ tự dòng toàn cục (1..N).
-            // Ghi đè index 1 bằng số thứ tự dòng (dòng 0 là header) để popup lấy đúng gif/audio.
+            // Dữ liệu có thể có hoặc không có dòng tiêu đề; GIF bắt đầu từ số 1.
+            const firstRowHasHeader = !/^\d+$/.test(String(res.values[0]?.[1] ?? '').trim())
             const rows = res.values.map((row: string[], i: number) => {
                 const newRow = [...row]
-                newRow[1] = String(i)
+                newRow[1] = String(i + (firstRowHasHeader ? 0 : 1))
                 return newRow
             })
             setDataSoTay(rows.slice(Number(import.meta.env.VITE_SOTAY_START_ROW)))
