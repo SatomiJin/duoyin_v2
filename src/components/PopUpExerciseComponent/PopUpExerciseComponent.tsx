@@ -13,6 +13,17 @@ const PopUpExerciseComponent = ({ data, type, setIsOpenPopUp }: PopUpExerciseCom
     const [answerUser, setAnswerUser] = useState<any>([]);
     const USED_KEY = 'USED_QUESTION';
 
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                setIsOpenPopUp(false);
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [setIsOpenPopUp]);
+
     // get danh sách câu hỏi đã làm và lưu câu hỏi đã làm vào local storage
     const getUserQuestion = () => {
         const userQuestion = localStorage.getItem(`${USED_KEY}_${type}`);

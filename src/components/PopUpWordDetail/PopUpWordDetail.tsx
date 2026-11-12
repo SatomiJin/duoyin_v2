@@ -11,6 +11,19 @@ const PopUpWordDetail = ({ props }: PopUpWordDetailProps) => {
 
     const [detailTuVung, setDetailTuVung] = useState<any>([]);
     const [gifDetail, setGifDetail] = useState<string | null>(null);
+    const { setShowPopUp } = props;
+
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                setShowPopUp(false)
+            }
+        }
+
+        window.addEventListener('keydown', handleKeyDown)
+        return () => window.removeEventListener('keydown', handleKeyDown)
+    }, [setShowPopUp])
+
     const getGifTuVung = async () => {
         if (!props?.data?.[1]) return;
         const res = await import(`../../Assets/gif/${props.data[1]}.gif`)
