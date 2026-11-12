@@ -20,7 +20,15 @@ const NoteBookPage = () => {
         // console.log(res.values);
 
         if (res && res?.values?.length > 0) {
-            setDataSoTay(res?.values.slice(Number(import.meta.env.VITE_SOTAY_START_ROW)))
+            // Cột STT (index 1) bị đánh lại 1..20 cho từng người phụ trách nên trùng nhau,
+            // trong khi gif/audio đặt tên theo thứ tự dòng toàn cục (1..N).
+            // Ghi đè index 1 bằng số thứ tự dòng (dòng 0 là header) để popup lấy đúng gif/audio.
+            const rows = res.values.map((row: string[], i: number) => {
+                const newRow = [...row]
+                newRow[1] = String(i)
+                return newRow
+            })
+            setDataSoTay(rows.slice(Number(import.meta.env.VITE_SOTAY_START_ROW)))
         }
     }
     const handleOnchangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
