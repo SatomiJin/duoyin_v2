@@ -5,21 +5,19 @@
     justify-content: center;
     align-items: flex-start;
     background-color: var(--bg-primary);
-    padding: 50px;
+    padding: 32px clamp(20px, 4vw, 48px);
     color: var(--bg-white);
     border-top: 1px solid var(--bg-primary);
 
     .footer-component_copyright {
         flex: 2;
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 400;
 
         .title {
-            font-size: 26px;
+            font-size: 22px;
             font-weight: 800;
             margin-bottom: 10px;
-
-
         }
     }
 
@@ -36,11 +34,11 @@
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            font-size: 20px;
+            font-size: 16px;
             transition: all 0.3s ease;
 
             i {
-                font-size: 40px !important;
+                font-size: 30px !important;
                 margin-right: 10px;
             }
 

@@ -1,6 +1,6 @@
 import './HeaderMobile.scss'
 import logo from '../../../Assets/logo.png'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { handleNavigateMail } from '../../../utils/utils'
 
 
@@ -66,6 +66,7 @@ export const HeaderMobileTop = () => {
 
 export const HeaderMobileBottom = () => {
     const navigate = useNavigate();
+    const location = useLocation();
     const handleNavigate = (path: string) => {
         if (path === 'home') navigate('/');
         else navigate(`/${path}`);
@@ -87,23 +88,44 @@ export const HeaderMobileBottom = () => {
         <div className="header-mobile">
             <div className="mobile-header_bottom">
                 <div className="menu-items">
-                    {menu.map((item, index) => {
+                    {menu.map((item) => {
+                        const isActive = location.pathname === (item.path === 'home' ? '/' : `/${item.path}`)
+
                         return (
-                            <div key={index} className={`item ${item.path}`} title={item.text} onClick={() => handleNavigate(item?.path)}>
-                                <div className="icon">{item.icon}</div>
-                            </div>
+                            <button
+                                key={item.path}
+                                type="button"
+                                className={`item ${item.path}${isActive ? ' active' : ''}`}
+                                title={item.desc}
+                                aria-label={item.desc}
+                                aria-current={isActive ? 'page' : undefined}
+                                onClick={() => handleNavigate(item.path)}
+                            >
+                                <span className="icon">{item.icon}</span>
+                                {item.path !== 'home' && <span className="nav-label">{item.desc}</span>}
+                            </button>
                         )
                     })}
                     <div className='item btn-group dropup'>
-                        <div className='icon' title="更多操作" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button
+                            type="button"
+                            className='icon more-trigger'
+                            title="Thêm lựa chọn"
+                            aria-label="Thêm lựa chọn"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
                             <i className="fa-solid fa-ellipsis"></i>
-                        </div>
+                            <span className="nav-label">Thêm</span>
+                        </button>
                         <ul className="dropdown-menu">
-                            {subMenu.map((item, index) => {
+                            {subMenu.map((item) => {
                                 return (
-                                    <li className="dropdown-item" key={index} onClick={() => handleNavigateSub(item?.path)}>
-                                        <div className='icon'>{item.icon}</div>
-                                        <div className='text'>{item.text}</div>
+                                    <li key={item.path}>
+                                        <button type="button" className="dropdown-item" onClick={() => handleNavigateSub(item.path)}>
+                                            <span className='icon'>{item.icon}</span>
+                                            <div className='text'>{item.text}</div>
+                                        </button>
                                     </li>
                                 )
                             })}
